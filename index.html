@@ -2268,21 +2268,8 @@
     animateCounters();
 
     /* ──────────────────────────────────────────
-       8. Parallax-lite on Hero
+       8. Parallax-lite on Hero (disabled — caused washed-out effect)
        ────────────────────────────────────────── */
-    const heroContent = document.querySelector('.hero .container');
-    if (heroContent) {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!prefersReducedMotion) {
-        window.addEventListener('scroll', () => {
-          const scrolled = window.scrollY;
-          if (scrolled < 800) {
-            heroContent.style.transform = 'translateY(' + (scrolled * 0.15) + 'px)';
-            heroContent.style.opacity = Math.max(1 - scrolled / 700, 0);
-          }
-        }, { passive: true });
-      }
-    }
   });
   </script>
 
