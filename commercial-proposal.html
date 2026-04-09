@@ -427,6 +427,7 @@
        ═══════════════════════════════════════════ */
     .hero {
       padding: 96px 0 80px;
+      padding-top: 112px;
       border-top: none;
       position: relative;
     }
@@ -1441,12 +1442,6 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--color-border-light);
-      transform: translateY(-100%);
-      transition: transform 0.35s var(--ease-out-expo);
-    }
-
-    .site-nav.visible {
-      transform: translateY(0);
     }
 
     .nav-inner {
@@ -2592,26 +2587,7 @@
     const navMobile = document.getElementById('navMobile');
     const heroSection = document.getElementById('hero');
 
-    // Show nav after scrolling past hero
-    if (siteNav && heroSection) {
-      const showNav = () => {
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        if (window.scrollY > heroBottom - 100) {
-          siteNav.classList.add('visible');
-        } else {
-          siteNav.classList.remove('visible');
-          // Also close mobile nav if we scroll back to top
-          if (navMobile && navMobile.classList.contains('open')) {
-            navMobile.classList.remove('open');
-            navToggle.classList.remove('open');
-            document.body.style.overflow = '';
-          }
-        }
-      };
-      window.addEventListener('scroll', showNav, { passive: true });
-      showNav();
-    }
-
+    // Nav is always visible, no show/hide logic needed
     // Hamburger toggle
     if (navToggle && navMobile) {
       navToggle.addEventListener('click', () => {
