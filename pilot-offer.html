@@ -131,8 +131,8 @@
     }
 
     @keyframes badgePulse {
-      0%, 100% { transform: translateX(-50%) scale(1); }
-      50%      { transform: translateX(-50%) scale(1.05); }
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.05); }
     }
 
     @keyframes urgencyBlink {
@@ -614,10 +614,7 @@
     }
 
     .price-badge {
-      position: absolute;
-      top: -1px;
-      left: 50%;
-      transform: translateX(-50%);
+      display: inline-block;
       background: linear-gradient(135deg, var(--color-gold), #D4B963);
       color: #fff;
       font-size: 0.72rem;
@@ -625,11 +622,13 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 8px 28px;
-      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      border-radius: var(--radius-md);
+      margin-bottom: 20px;
       animation: badgePulse 3s ease-in-out infinite;
     }
 
     .price-card .section-label {
+      display: block;
       color: var(--color-gold);
       margin-bottom: 8px;
     }
@@ -1440,7 +1439,7 @@
   <section class="price-hero" id="price">
     <div class="container">
       <div class="price-card" data-reveal="scale">
-        <div class="price-badge">Пилотная цена</div>
+        <span class="price-badge">Пилотная цена</span>
         <span class="section-label">Всё включено</span>
         <h2>Одна цена — полная кампания</h2>
         <div class="price-amount">
@@ -1672,29 +1671,30 @@
   <footer class="contacts-footer" id="contacts">
     <div class="container">
       <span class="section-label" data-reveal="up">Контакты</span>
-      <h2 data-reveal="up" data-delay="1">Свяжитесь с нами</h2>
+      <h2 data-reveal="up" data-delay="1">Алексей Дмитриевич Жбанков</h2>
 
       <div class="contacts-grid" data-reveal="up" data-delay="2">
         <div class="contact-block">
-          <h4>Исполнитель</h4>
+          <h4>Связаться</h4>
           <div class="contact-line">
-            <span>ИП Шарафутдинов Марсель Рамилевич</span>
-            <span class="contact-label">Телефон / WhatsApp</span>
-            <a href="tel:+79872253727">+7 987 225-37-27</a>
+            <span class="contact-label">Телефон</span>
+            <a href="tel:+79620546601">+7-962-054-6601</a>
+
             <span class="contact-label">Email</span>
-            <a href="mailto:marsel@astradigital.ru">marsel@astradigital.ru</a>
+            <a href="mailto:ipzhbankov@yandex.ru">ipzhbankov@yandex.ru</a>
+
             <span class="contact-label">Telegram</span>
-            <a href="https://t.me/astra_marcel" target="_blank" rel="noopener noreferrer">@astra_marcel</a>
+            <a href="https://t.me/zhbankov_alex" target="_blank" rel="noopener">@zhbankov_alex</a>
           </div>
         </div>
         <div class="contact-block">
-          <h4>Быстрая связь</h4>
+          <h4>Реквизиты</h4>
           <div class="contact-line">
-            <span>Напишите нам в любой удобный мессенджер — ответим в течение часа в рабочее время</span>
-            <span class="contact-label">WhatsApp</span>
-            <a href="https://wa.me/79872253727" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
-            <span class="contact-label">Telegram</span>
-            <a href="https://t.me/astra_marcel" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+            <span class="contact-label">Сайт</span>
+            <a href="https://www.pipupi.ru" target="_blank" rel="noopener">www.pipupi.ru</a>
+
+            <span class="contact-label">ИНН</span>
+            <span>550516401202</span>
           </div>
         </div>
       </div>
