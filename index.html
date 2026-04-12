@@ -649,60 +649,67 @@
     .btn-pilot-pulse {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 16px 36px;
-      background: linear-gradient(135deg, var(--color-accent) 0%, #1B5A4E 50%, var(--color-accent-hover) 100%);
-      background-size: 200% 200%;
-      color: #fff;
+      gap: 8px;
+      padding: 12px 24px;
+      background: transparent;
+      color: var(--color-accent);
       font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 700;
+      font-size: 0.88rem;
+      font-weight: 600;
       text-decoration: none;
-      border: none;
-      border-radius: 60px;
+      border: 1.5px solid var(--color-accent);
+      border-radius: var(--radius-sm);
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      transition: all 0.3s var(--ease-out-quart);
-      animation:
-        ctaPulse 2.5s ease-in-out infinite,
-        ctaGlow 3s ease-in-out infinite,
-        gradientShift 6s ease infinite;
+      transition: all 0.25s var(--ease-out-quart);
+      animation: pilotPulse 2s ease-in-out infinite;
     }
 
-    .btn-pilot-pulse::before {
+    @keyframes pilotPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(27, 74, 62, 0.4); }
+      50%      { box-shadow: 0 0 0 8px rgba(27, 74, 62, 0); }
+    }
+
+    .btn-pilot-pulse::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.15) 50%, transparent 80%);
-      background-size: 200% 100%;
-      animation: shimmer 2.5s ease-in-out infinite;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s var(--ease-out-expo);
+      z-index: 0;
+    }
+
+    .btn-pilot-pulse:hover::after {
+      transform: scaleX(1);
     }
 
     .btn-pilot-pulse:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow:
-        0 8px 32px rgba(27, 74, 62, 0.3),
-        0 0 60px var(--color-gold-glow);
+      color: #fff;
+      border-color: var(--color-accent);
       animation: none;
     }
 
     .btn-pilot-pulse:active {
-      transform: translateY(-1px) scale(0.98);
+      transform: translateY(0);
     }
 
-    .btn-pilot-pulse svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 1;
-    }
-
+    .btn-pilot-pulse svg,
     .btn-pilot-pulse span {
       position: relative;
       z-index: 1;
+    }
+
+    .btn-pilot-pulse svg {
+      width: 16px;
+      height: 16px;
+      transition: color 0.25s;
+    }
+
+    .btn-pilot-pulse:hover svg {
+      color: #fff;
     }
 
     /* ═══════════════════════════════════════════
@@ -2219,7 +2226,7 @@
         </button>
         <a href="pilot-offer.html" class="btn-pilot-pulse">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          <span>Пилотный проект — спецпредложение</span>
+          <span>Пилотный проект — для первых 5 членов Ассоциации</span>
         </a>
       </div>
 
