@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Коммерческое предложение — Автоматизация продаж и digital-услуги для членов ассоциации</title>
+  <title>Коммерческое предложение — Автоматизация продаж и digital-услуги для резидентов Ассоциации лёгкой промышленности «Мода.Технологии.Ритейл»</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1368,6 +1368,113 @@
     }
 
     /* ═══════════════════════════════════════════
+       INLINE CTA (mid-page)
+       ═══════════════════════════════════════════ */
+    .inline-cta {
+      margin-top: 40px;
+      padding: 32px;
+      background: var(--color-surface-warm);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+
+    .inline-cta p {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .inline-cta .btn {
+      padding: 12px 28px;
+      font-size: 0.88rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       CASE STUDY
+       ═══════════════════════════════════════════ */
+    .case-study-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: box-shadow 0.4s var(--ease-out-quart);
+    }
+
+    .case-study-card:hover {
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .case-study-header {
+      background: var(--color-accent);
+      color: #fff;
+      padding: 28px 36px;
+    }
+
+    .case-study-header h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .case-study-header p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .case-study-body {
+      padding: 36px;
+    }
+
+    .case-study-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .case-stat {
+      text-align: center;
+      padding: 16px;
+      background: var(--color-accent-light);
+      border-radius: var(--radius-md);
+      transition: transform 0.3s var(--ease-out-quart);
+    }
+
+    .case-stat:hover {
+      transform: translateY(-4px);
+    }
+
+    .case-stat .key-number {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 4px;
+    }
+
+    .case-stat span:last-child {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      line-height: 1.3;
+    }
+
+    .case-study-result {
+      padding: 24px;
+      background: var(--color-highlight);
+      border-left: 4px solid var(--color-accent);
+      border-radius: var(--radius-sm);
+    }
+
+    .case-study-result .key-number {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+    }
+
+    .case-study-result p {
+      margin-bottom: 0;
+      margin-top: 4px;
+    }
+
+    /* ═══════════════════════════════════════════
        FOOTER / CONTACTS
        ═══════════════════════════════════════════ */
     .contacts-footer {
@@ -1974,9 +2081,10 @@
         <li><a href="#services">Услуги</a></li>
         <li><a href="#digital">Digital</a></li>
         <li><a href="#packages">Пакеты</a></li>
-        <li><a href="#partner">Партнёру</a></li>
+        <li><a href="#partner">Резидентам</a></li>
         <li><a href="#steps">Этапы</a></li>
         <li><a href="#comparison">Сравнение</a></li>
+        <li><a href="#casestudy">Кейс</a></li>
         <li><a href="#contacts">Контакты</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Открыть меню">
@@ -1992,13 +2100,14 @@
     <a href="#format">Формат сотрудничества</a>
     <a href="#services">Лидогенерация и продажи</a>
     <a href="#digital">Digital-услуги</a>
-    <a href="#bonus">Бонус — парсер</a>
+    <a href="#bonus">Бизнес-клуб</a>
     <a href="#packages">Пакеты под ключ</a>
     <a href="#infrastructure">Инфраструктура</a>
     <a href="#pricing">Ценообразование</a>
-    <a href="#partner">Партнёрская выгода</a>
+    <a href="#partner">Ценность для резидентов</a>
     <a href="#steps">Этапы запуска</a>
     <a href="#comparison">Сравнение с рынком</a>
+    <a href="#casestudy">Реальный кейс</a>
     <a href="#cta">Начнём?</a>
     <a href="#contacts">Контакты</a>
   </div>
@@ -2015,8 +2124,8 @@
   <header class="hero" id="hero">
     <div class="container">
       <span class="section-label">Коммерческое предложение</span>
-      <h1>Привлечение клиентов, автоматизация продаж и digital-развитие для членов ассоциации</h1>
-      <p class="hero-subtitle">Комплекс профессиональных инструментов, который помогает участникам вашей ассоциации находить клиентов, выигрывать тендеры и выстраивать системные продажи</p>
+      <h1>Привлечение клиентов, автоматизация продаж и digital-развитие для резидентов Ассоциации</h1>
+      <p class="hero-subtitle">Комплекс профессиональных инструментов, который помогает резидентам Ассоциации лёгкой промышленности «Мода.Технологии.Ритейл» находить клиентов, выигрывать тендеры и выстраивать системные продажи</p>
       <p class="hero-offer">Мы берём на себя весь цикл привлечения: сбор баз, запуск рассылок, обработка ответов, подготовка КП и сопровождение тендеров. Дополнительно — ИИ-агенты, сайты, приложения и презентации.</p>
 
       <div class="hero-actions">
@@ -2033,7 +2142,7 @@
         </div>
         <div class="hero-meta-item">
           <span class="hero-meta-label">Для кого</span>
-          <span class="hero-meta-value">Члены ассоциации / НКО</span>
+          <span class="hero-meta-value">Резиденты Ассоциации</span>
         </div>
         <div class="hero-meta-item">
           <span class="hero-meta-label">Направления</span>
@@ -2050,25 +2159,20 @@
     <div class="container">
       <span class="section-label" data-reveal="up">Формат сотрудничества</span>
       <h2 data-reveal="up" data-delay="1">Как устроено партнёрство</h2>
-      <p class="section-desc" data-reveal="up" data-delay="2">Ассоциация — координатор и доверенная сторона, исполнитель — оказывает услуги членам напрямую. Понятные роли, прозрачные условия.</p>
+      <p class="section-desc" data-reveal="up" data-delay="2">Ассоциация лёгкой промышленности «Мода.Технологии.Ритейл» — партнёр проекта и координатор процессов. Программа предназначена исключительно для резидентов Ассоциации. Исполнитель оказывает услуги напрямую, Ассоциация — решает вопросы взаимодействия с резидентами и узкоспециализированные отраслевые задачи.</p>
 
       <div class="format-grid">
         <div class="format-card" data-reveal="up" data-delay="1">
           <h4>Вебинары и обучение</h4>
-          <p>Исполнитель проводит вебинары для членов ассоциации — разбирает инструменты, показывает кейсы, отвечает на вопросы. Это помогает участникам принять решение на основе понимания, а не рекламных обещаний.</p>
+          <p>Исполнитель проводит вебинары для резидентов Ассоциации — разбирает инструменты, показывает кейсы, отвечает на вопросы. Для резидентов — бесплатно. Для внешних участников — 1 000 ₽ (инструмент вовлечения в Ассоциацию).</p>
         </div>
         <div class="format-card" data-reveal="up" data-delay="2">
           <h4>Консультации и сопровождение</h4>
-          <p>Каждый участник может получить индивидуальную консультацию, определить задачи и выбрать подходящий формат работы — от разовой рассылки до полного цикла outbound-продаж.</p>
+          <p>Каждый резидент может получить индивидуальную консультацию, определить задачи и выбрать подходящий формат работы. Консультации проводятся строго по записи.</p>
         </div>
-        <div class="format-card" data-reveal="up" data-delay="3">
-          <h4>Роль ассоциации</h4>
-          <p>Ассоциация организует взаимодействие, контролирует качество, помогает в коммуникации между исполнителем и участниками. Руководитель выступает координатором и гарантом условий.</p>
-        </div>
-        <div class="format-card format-card--highlight" data-reveal="up" data-delay="4">
-          <div class="key-number">20%</div>
-          <h4>Партнёрское вознаграждение</h4>
-          <p>Руководитель ассоциации получает <span class="highlight-text">фиксированные 20% от стоимости каждого заказа</span>, оплаченного членом ассоциации. Вознаграждение уже включено в цену услуг — члены платят ровно столько, сколько указано в предложении. Выплата — по факту оплаты заказчиком.</p>
+        <div class="format-card format-card--highlight" data-reveal="up" data-delay="3">
+          <h4>Роль Ассоциации — партнёр проекта</h4>
+          <p>Ассоциация лёгкой промышленности «Мода.Технологии.Ритейл» является координатором процессов: решает вопросы взаимодействия с резидентами, отраслевые задачи, в том числе подготовку документов для тендеров. Благодаря партнёрству с Ассоциацией, резиденты получают все услуги по цене в два раза ниже рыночной.</p>
         </div>
       </div>
     </div>
@@ -2087,8 +2191,8 @@
         <li class="service-item" data-reveal="left" data-delay="1">
           <span class="service-number">1</span>
           <h3>Сбор баз для рассылки</h3>
-          <p>Формирование целевых списков организаций по нише, региону, размеру компании. Каждый контакт проходит фильтрацию и сегментацию.</p>
-          <span class="service-price">3 ₽ за организацию · от 500 контактов · включая агентское вознаграждение</span>
+          <p>Формирование целевых списков организаций по нише, региону, размеру компании из базы 2ГИС — реальный и живой бизнес, а не однодневки с номиналами. Каждый контакт проходит фильтрацию и сегментацию. ТЗ на сбор формируется на основе брифа (ниша, география, тип компании, исключения) — не более 2 итераций согласования до запуска.</p>
+          <span class="service-price">3 ₽ за организацию · от 500 контактов</span>
         </li>
         <li class="service-item" data-reveal="left" data-delay="2">
           <span class="service-number">2</span>
@@ -2099,7 +2203,7 @@
         <li class="service-item" data-reveal="left" data-delay="3">
           <span class="service-number">3</span>
           <h3>Запуск холодных email-рассылок через Coldy</h3>
-          <p>Настройка инфраструктуры с нуля: домены, корпоративные почты, прогрев отправителей, запуск кампании. Мониторинг доставляемости и ответов в реальном времени.</p>
+          <p>Настройка инфраструктуры с нуля: домены, корпоративные почты, прогрев отправителей (минимум 14 дней), запуск кампании. Не более 50 писем в день с одного ящика. Мониторинг доставляемости через сервис Coldy: ежедневная проверка рейтинга каждой почты, механика исключает попадание в спам. Помощь в подборе 3 доменов — 500 ₽.</p>
         </li>
         <li class="service-item" data-reveal="left" data-delay="4">
           <span class="service-number">4</span>
@@ -2115,10 +2219,15 @@
         <li class="service-item" data-reveal="left" data-delay="6">
           <span class="service-number">6</span>
           <h3>Тендерное сопровождение под ключ</h3>
-          <p>Поиск закупок, подготовка документации, подача заявки и сопровождение на всех этапах. Работаем с государственными и коммерческими закупками.</p>
-          <span class="service-price">5% от суммы закупки · минимум 20 000 ₽</span>
+          <p>Отдельный блок услуг. Алгоритм: мониторинг всех площадок → подбор подходящих закупок → уведомление резидента → совместная подготовка документации → подача заявки → сопровождение. Решение об участии принимает резидент. Работаем со всеми площадками: государственными и коммерческими.</p>
+          <span class="service-price">100% предоплата 20 000 ₽ + 3% от суммы закупки при выигрыше</span>
         </li>
       </ul>
+
+      <div class="inline-cta" data-reveal="up">
+        <p>Хотите узнать, как это работает для вашей ниши?</p>
+        <a href="https://t.me/zhbankov_alex" target="_blank" rel="noopener" class="btn btn-primary">Обсудить в Telegram</a>
+      </div>
     </div>
   </section>
 
@@ -2149,8 +2258,12 @@
         </div>
         <div class="digital-card" data-reveal="scale" data-delay="4">
           <h4>Презентации</h4>
-          <p>Создание презентаций в форматах PDF, PowerPoint, интерактивный HTML. Структура, дизайн и текст — под задачу: инвестору, партнёру, тендерной комиссии.</p>
-          <span class="service-price">от 15 000 ₽</span>
+          <p>Создание презентаций в форматах PDF, PowerPoint, интерактивный HTML. Три уровня:</p>
+          <ul style="list-style:none;margin:8px 0 0;padding:0;font-size:0.88rem;color:var(--color-text-secondary);display:flex;flex-direction:column;gap:6px;">
+            <li style="padding-left:12px;border-left:2px solid var(--color-accent);">Базовый — до 10 слайдов, структура + дизайн, 1 формат, 1 итерация правок, 5 рабочих дней — <strong>15 000 ₽</strong></li>
+            <li style="padding-left:12px;border-left:2px solid var(--color-accent);">Расширенный — до 20 слайдов, структура + текст + дизайн, 2 формата (PDF + PPTX), 2 итерации, 7 рабочих дней — <strong>30 000 ₽</strong></li>
+            <li style="padding-left:12px;border-left:2px solid var(--color-accent);">Премиум — до 35 слайдов, сторителлинг + текст + дизайн + инфографика, все форматы (PDF + PPTX + HTML), 3 итерации, 10 рабочих дней — <strong>55 000 ₽</strong></li>
+          </ul>
         </div>
         <div class="digital-card" data-reveal="scale" data-delay="5">
           <h4>Консультации</h4>
@@ -2167,9 +2280,9 @@
   <section id="bonus">
     <div class="container">
       <div class="bonus-block" data-reveal="scale">
-        <span class="section-label">Бонус для участников</span>
-        <h2>Всем членам ассоциации — бесплатный доступ к парсеру возможностей</h2>
-        <p>Каждый участник ассоциации получает бесплатный доступ к автоматизированному инструменту поиска бизнес-возможностей. Инструмент агрегирует актуальные предложения по заданным фильтрам: ниша, регион, сумма, срок. Не нужно мониторить десятки площадок вручную — парсер делает это за вас.</p>
+        <span class="section-label">Привилегии бизнес-клуба</span>
+        <h2>Дополнительные возможности для резидентов Ассоциации с действующей структурой</h2>
+        <p>Резиденты Ассоциации, входящие в бизнес-клуб, получают дополнительные привилегии — бесплатный доступ к автоматизированному инструменту поиска бизнес-возможностей. Инструмент агрегирует актуальные предложения по заданным фильтрам: ниша, регион, сумма, срок. Для компаний, которые только начинают — доступны вебинары и обучающие материалы.</p>
 
         <ul class="bonus-features">
           <li><span class="accent-tag">Тендеры</span> поиск на множестве торговых и закупочных площадок</li>
@@ -2177,7 +2290,7 @@
           <li><span class="accent-tag">Гранты</span> федеральные и региональные программы поддержки для бизнеса</li>
         </ul>
 
-        <p>Это не дополнительная услуга — это базовый бонус для каждого члена ассоциации.</p>
+        <p>Доступ предоставляется резидентам бизнес-клуба и участникам пилотного проекта.</p>
 
         <div class="bonus-note">
           Доступ предоставляется после вводной встречи с исполнителем
@@ -2193,13 +2306,13 @@
     <div class="container">
       <span class="section-label" data-reveal="up">Пакетные предложения</span>
       <h2 data-reveal="up" data-delay="1">Готовые пакеты под ключ</h2>
-      <p class="section-desc" data-reveal="up" data-delay="2">Три формата работы — от тестового запуска до полного цикла outbound-продаж. В каждом пакете уже включены все расходы: база, инфраструктура, работа, вознаграждение ассоциации.</p>
+      <p class="section-desc" data-reveal="up" data-delay="2">Три формата работы — от тестового запуска до полного цикла outbound-продаж. В каждом пакете уже включены все расходы: база, инфраструктура, работа. Минимальный заказ — от 60 000 ₽.</p>
 
       <div class="packages-grid">
         <!-- Старт -->
         <div class="package-card" data-reveal="up" data-delay="1">
           <div class="package-name">Старт</div>
-          <div class="package-price">46 000 ₽</div>
+          <div class="package-price">60 000 ₽</div>
           <div class="package-period">разовый запуск · 1 месяц ведения</div>
           <div class="package-audience">Первый запуск outbound, тест ниши, проверка гипотезы</div>
           <ul class="package-features">
@@ -2213,7 +2326,7 @@
             <li>Подписка Coldy (10 000 лидов / 40 000 писем) — включена</li>
             <li>6 почт Google Workspace — включены</li>
             <li>3 корпоративных домена — включены</li>
-            <li>Партнёрское вознаграждение ассоциации — включено</li>
+            <li>2 консультации по 60 минут (по записи)</li>
           </ul>
           <div class="package-total">Всё включено, без скрытых доплат</div>
         </div>
@@ -2232,7 +2345,7 @@
             <li>Помощь в подготовке КП для заинтересованных лидов</li>
             <li>Корректировка цепочки по результатам первого месяца</li>
             <li>Инфраструктура за 2 месяца — включена</li>
-            <li>Партнёрское вознаграждение ассоциации — включено</li>
+            <li>4 консультации по 60 минут (по записи)</li>
           </ul>
           <div class="package-total">Всё включено за 2 месяца</div>
         </div>
@@ -2253,6 +2366,11 @@
           </ul>
           <div class="package-total">Запишитесь на вводную встречу для расчёта</div>
         </div>
+      </div>
+
+      <div class="inline-cta" data-reveal="up">
+        <p>Готовы выбрать пакет или нужна помощь с выбором?</p>
+        <a href="https://t.me/zhbankov_alex" target="_blank" rel="noopener" class="btn btn-primary">Записаться на консультацию</a>
       </div>
     </div>
   </section>
@@ -2302,7 +2420,7 @@
       <h2 data-reveal="up" data-delay="1">Как формируется стоимость</h2>
 
       <div class="pricing-note" data-reveal="up" data-delay="2">
-        <p>Цена, которую вы видите — конечная. Никаких доплат от исполнителя в процессе работы не возникает. Партнёрское вознаграждение ассоциации уже включено в стоимость каждой услуги.</p>
+        <p>Цена, которую вы видите — конечная. Никаких доплат от исполнителя в процессе работы не возникает.</p>
         <p>Инфраструктурные расходы — сервисы, домены, почты — либо включены в пакет, либо заказчик несёт их напрямую. Это всегда фиксируется в техническом задании до старта.</p>
         <p>Точная стоимость разовых услуг и индивидуальных проектов зависит от объёма задач, ниши, сроков, числа интеграций и глубины сопровождения.</p>
       </div>
@@ -2310,41 +2428,124 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       БЛОК 8: ПАРТНЁРСКАЯ ВЫГОДА
+       БЛОК 7.5: ПРАЙС-ЛИСТ УСЛУГ
+       ═══════════════════════════════════════════ -->
+  <section id="pricelist">
+    <div class="container">
+      <span class="section-label" data-reveal="up">Прайс-лист</span>
+      <h2 data-reveal="up" data-delay="1">Меню услуг</h2>
+      <p class="section-desc" data-reveal="up" data-delay="2">Выберите нужные услуги по отдельности или воспользуйтесь готовыми пакетами.</p>
+
+      <table class="infra-table" data-reveal="up" data-delay="3">
+        <thead>
+          <tr>
+            <th>Услуга</th>
+            <th>Стоимость</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="2" style="background:var(--color-accent-light);font-weight:600;color:var(--color-accent);letter-spacing:0.04em;font-size:0.82rem;text-transform:uppercase;">Лидогенерация и outbound</td></tr>
+          <tr>
+            <td>Сбор и сегментация базы (2ГИС + парсинг email)</td>
+            <td>3 ₽ / организация (от 500)</td>
+          </tr>
+          <tr>
+            <td>Настройка инфраструктуры (домены + почты + прогрев)</td>
+            <td>от 15 000 ₽</td>
+          </tr>
+          <tr>
+            <td>Помощь в подборе 3 доменов</td>
+            <td>500 ₽</td>
+          </tr>
+          <tr>
+            <td>Создание цепочки писем</td>
+            <td>от 15 000 ₽</td>
+          </tr>
+          <tr>
+            <td>Запуск и ведение рассылки через Coldy (1 мес.)</td>
+            <td>от 20 000 ₽</td>
+          </tr>
+          <tr>
+            <td>Обработка ответов и переписка с лидами (1 мес.)</td>
+            <td>от 15 000 ₽</td>
+          </tr>
+          <tr><td colspan="2" style="background:var(--color-accent-light);font-weight:600;color:var(--color-accent);letter-spacing:0.04em;font-size:0.82rem;text-transform:uppercase;">Тендерное сопровождение</td></tr>
+          <tr>
+            <td>Полный цикл: мониторинг → подбор → документация → подача → сопровождение</td>
+            <td>20 000 ₽ предоплата + 3% при выигрыше</td>
+          </tr>
+          <tr><td colspan="2" style="background:var(--color-accent-light);font-weight:600;color:var(--color-accent);letter-spacing:0.04em;font-size:0.82rem;text-transform:uppercase;">Digital-услуги</td></tr>
+          <tr>
+            <td>ИИ-агенты (Telegram, WhatsApp, Авито, email)</td>
+            <td>от 60 000 ₽</td>
+          </tr>
+          <tr>
+            <td>Сайты и лендинги</td>
+            <td>от 66 000 ₽</td>
+          </tr>
+          <tr>
+            <td>Мобильные приложения (iOS / Android)</td>
+            <td>от 144 000 ₽</td>
+          </tr>
+          <tr>
+            <td>Презентация — базовый (до 10 слайдов, 1 формат)</td>
+            <td>15 000 ₽</td>
+          </tr>
+          <tr>
+            <td>Презентация — расширенный (до 20 слайдов, 2 формата)</td>
+            <td>30 000 ₽</td>
+          </tr>
+          <tr>
+            <td>Презентация — премиум (до 35 слайдов, все форматы)</td>
+            <td>55 000 ₽</td>
+          </tr>
+          <tr><td colspan="2" style="background:var(--color-accent-light);font-weight:600;color:var(--color-accent);letter-spacing:0.04em;font-size:0.82rem;text-transform:uppercase;">Консультации и сопровождение</td></tr>
+          <tr>
+            <td>Индивидуальная консультация (по записи)</td>
+            <td>5 000 ₽ / 60 мин</td>
+          </tr>
+          <tr>
+            <td>Вводный вебинар (для резидентов Ассоциации)</td>
+            <td>Бесплатно</td>
+          </tr>
+          <tr>
+            <td>Вводный вебинар (для внешних участников)</td>
+            <td>1 000 ₽</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       БЛОК 8: ЦЕННОСТЬ ДЛЯ РЕЗИДЕНТОВ
        ═══════════════════════════════════════════ -->
   <section id="partner">
     <div class="container">
-      <span class="section-label" data-reveal="up">Для ассоциации</span>
-      <h2 data-reveal="up" data-delay="1">Партнёрская выгода</h2>
-      <p class="section-desc" data-reveal="up" data-delay="2">Что получает ассоциация и её руководитель от этого сотрудничества — помимо пользы для членов.</p>
+      <span class="section-label" data-reveal="up">Ценность для резидентов</span>
+      <h2 data-reveal="up" data-delay="1">Что получают резиденты Ассоциации</h2>
+      <p class="section-desc" data-reveal="up" data-delay="2">Благодаря партнёрству с Ассоциацией, представители малого и среднего бизнеса получают профессиональные инструменты по цене в два раза ниже рыночной.</p>
 
       <ul class="benefits-list">
         <li class="benefit-item" data-reveal="left" data-delay="1">
           <span class="benefit-marker"></span>
           <div>
-            <span class="benefit-heading">Дополнительная ценность для членов</span>
-            <p>Ассоциация предоставляет участникам доступ к профессиональным инструментам привлечения клиентов и digital-развития — на понятных и проверенных условиях. Это укрепляет роль ассоциации как организации, которая решает реальные задачи бизнеса.</p>
+            <span class="benefit-heading">Эффективная рекламная кампания по выгодным условиям</span>
+            <p>Стабильный поток клиентов, представляющих малый и средний бизнес, получает очень выгодное предложение — проведение эффективной рекламной кампании и автоматизацию бизнес-процессов по цене в два раза ниже рыночной стоимости.</p>
           </div>
         </li>
         <li class="benefit-item" data-reveal="left" data-delay="2">
           <span class="benefit-marker"></span>
           <div>
-            <span class="benefit-heading">Роль координатора</span>
-            <p>Руководитель ассоциации организует взаимодействие между исполнителем и членами, помогает в коммуникации, контролирует качество. Никакой операционной нагрузки: вся работа по оказанию услуг — на стороне исполнителя.</p>
+            <span class="benefit-heading">Ассоциация — координатор и гарант</span>
+            <p>Ассоциация координирует взаимодействие между исполнителем и резидентами, решает узкоспециализированные отраслевые задачи и помогает с подготовкой документов для тендеров. Вся операционная работа по оказанию услуг — на стороне исполнителя.</p>
           </div>
         </li>
         <li class="benefit-item" data-reveal="left" data-delay="3">
           <span class="benefit-marker"></span>
           <div>
-            <span class="benefit-heading">20% от каждого заказа</span>
-            <p>Руководитель ассоциации получает <span class="highlight-text">фиксированные 20% от стоимости каждой оплаченной услуги</span>, заказанной членом ассоциации. Выплата — по факту оплаты заказчиком. Без авансов, взносов и скрытых условий.</p>
-          </div>
-        </li>
-        <li class="benefit-item" data-reveal="left" data-delay="4">
-          <span class="benefit-marker"></span>
-          <div>
-            <span class="benefit-heading">Вебинары за счёт исполнителя</span>
-            <p>Проведение регулярных вебинаров для членов ассоциации — как инструмент доверия и вовлечения. Исполнитель готовит контент, проводит выступления и отвечает на вопросы. Ассоциации остаётся только организовать анонс.</p>
+            <span class="benefit-heading">Вебинары и обучение</span>
+            <p>Регулярные вебинары для резидентов Ассоциации — бесплатно. Исполнитель готовит контент, проводит выступления и отвечает на вопросы. Для внешних участников — 1 000 ₽ (инструмент вовлечения в Ассоциацию).</p>
           </div>
         </li>
       </ul>
@@ -2364,8 +2565,8 @@
         <div class="timeline-line-fill"></div>
         <div class="timeline-step" data-reveal="up" data-delay="1">
           <span class="timeline-number">1</span>
-          <h4>Вводная встреча и бриф</h4>
-          <p>Обсуждаем нишу, цели, целевую аудиторию и подходящий формат работы. Определяем ожидания и KPI.</p>
+          <h4>Вводный вебинар и бриф</h4>
+          <p>Для резидентов Ассоциации — бесплатно. Для внешних участников — 1 000 ₽. Обсуждаем нишу, цели, целевую аудиторию и подходящий формат работы. Отправляем бриф, резидент заполняет — не более 2 итераций согласования.</p>
         </div>
         <div class="timeline-step" data-reveal="up" data-delay="2">
           <span class="timeline-number">2</span>
@@ -2424,8 +2625,64 @@
         <div class="comparison-item ours" data-reveal="right" data-delay="3">
           <h4>Пакет «Старт»</h4>
           <p>Включает всё: сбор базы на 1 000 организаций, парсинг email, цепочку писем, инфраструктуру (домены, почты, прогрев), подписку Coldy, запуск рассылки и месяц ведения.</p>
-          <span class="comparison-price">46&nbsp;000&nbsp;₽</span>
+          <span class="comparison-price">60&nbsp;000&nbsp;₽</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       БЛОК 10.5: РЕАЛЬНЫЙ КЕЙС — АСТРА
+       ═══════════════════════════════════════════ -->
+  <section id="casestudy">
+    <div class="container">
+      <span class="section-label" data-reveal="up">Реальный результат</span>
+      <h2 data-reveal="up" data-delay="1">Кейс: производитель премиальной мебели «АСТРА»</h2>
+      <p class="section-desc" data-reveal="up" data-delay="2">Результаты первого месяца outbound-кампании для компании из сегмента B2B-продаж мебели премиум-класса.</p>
+
+      <div class="case-study-card" data-reveal="up" data-delay="3">
+        <div class="case-study-header">
+          <h3>АСТРА</h3>
+          <p>Производитель премиальной мебели · B2B-продажи</p>
+        </div>
+        <div class="case-study-body">
+          <div class="case-study-stats">
+            <div class="case-stat">
+              <div class="key-number">1 500</div>
+              <span>лидов в базе</span>
+            </div>
+            <div class="case-stat">
+              <div class="key-number">4 100</div>
+              <span>отправлено писем</span>
+            </div>
+            <div class="case-stat">
+              <div class="key-number">67</div>
+              <span>ответов получено</span>
+            </div>
+            <div class="case-stat">
+              <div class="key-number">37</div>
+              <span>целевых лидов</span>
+            </div>
+          </div>
+
+          <div class="case-study-result">
+            <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;">
+              <div>
+                <div class="key-number">5 заказов</div>
+                <p>закрыто за первый месяц работы</p>
+              </div>
+              <div>
+                <div class="key-number">2,6 млн ₽</div>
+                <p>общая сумма заказов</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inline-cta" data-reveal="up" data-delay="4">
+        <p>Хотите такие же результаты в своей нише?</p>
+        <a href="https://t.me/zhbankov_alex" target="_blank" rel="noopener" class="btn btn-primary">Обсудить запуск</a>
       </div>
     </div>
   </section>
@@ -2440,9 +2697,9 @@
       <p data-reveal="up" data-delay="2">Выберите удобный формат — обсудим детали и определим, с чего лучше начать.</p>
 
       <div class="cta-buttons" data-reveal="scale" data-delay="3">
-        <a href="mailto:ipzhbankov@yandex.ru?subject=Обсуждение%20партнёрства" class="btn btn-primary">Обсудить формат партнёрства</a>
-        <a href="mailto:ipzhbankov@yandex.ru?subject=Пилотный%20проект" class="btn btn-secondary">Запустить пилотный проект</a>
-        <a href="mailto:ipzhbankov@yandex.ru?subject=Вводный%20вебинар" class="btn btn-secondary">Провести вводный вебинар</a>
+        <a href="https://t.me/zhbankov_alex" target="_blank" rel="noopener" class="btn btn-primary">Написать в Telegram</a>
+        <a href="tel:+79620546601" class="btn btn-secondary">Позвонить: +7-962-054-6601</a>
+        <a href="mailto:ipzhbankov@yandex.ru?subject=Коммерческое%20предложение%20—%20Ассоциация" class="btn btn-secondary">Написать на email</a>
       </div>
     </div>
   </section>
@@ -2482,7 +2739,7 @@
       </div>
 
       <div class="doc-date" data-reveal="fade" data-delay="3">
-        Документ подготовлен в апреле 2025 года. Актуальные условия уточняйте у исполнителя.
+        Документ подготовлен в апреле 2026 года. Актуальные условия уточняйте у исполнителя.
       </div>
     </div>
   </footer>
