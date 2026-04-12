@@ -645,37 +645,37 @@
       color: #fff;
     }
 
-    /* ─── Pulsating Pilot Button ─── */
+    /* ─── Pilot Button — warm accent CTA ─── */
     .btn-pilot-pulse {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 12px 24px;
       background: transparent;
-      color: var(--color-accent);
+      color: #92710A;
       font-family: var(--font-body);
       font-size: 0.88rem;
       font-weight: 600;
       text-decoration: none;
-      border: 1.5px solid var(--color-accent);
+      border: 1.5px solid var(--color-gold);
       border-radius: var(--radius-sm);
       cursor: pointer;
       position: relative;
       overflow: hidden;
       transition: all 0.25s var(--ease-out-quart);
-      animation: pilotPulse 2s ease-in-out infinite;
+      animation: pilotPulse 2.5s ease-in-out infinite;
     }
 
     @keyframes pilotPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(27, 74, 62, 0.4); }
-      50%      { box-shadow: 0 0 0 8px rgba(27, 74, 62, 0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200, 169, 81, 0.35); }
+      50%      { box-shadow: 0 0 0 6px rgba(200, 169, 81, 0); }
     }
 
     .btn-pilot-pulse::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--color-accent);
+      background: linear-gradient(135deg, #B8960F, #92710A);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.35s var(--ease-out-expo);
@@ -688,7 +688,7 @@
 
     .btn-pilot-pulse:hover {
       color: #fff;
-      border-color: var(--color-accent);
+      border-color: #92710A;
       animation: none;
     }
 
